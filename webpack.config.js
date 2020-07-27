@@ -4,7 +4,7 @@ const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 module.exports = {
     entry: {
-        app: ['./src/index.tsx'],
+        app: ['./src/components/index.tsx'],
         vendor: ['react', 'react-dom']
     },
     output: {
