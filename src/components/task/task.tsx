@@ -17,9 +17,9 @@ export const Task = ({ todo, index, completeTask, removeTask }: any) => {
 	);
 }
 
-const Button = () => {
+const Button = (type: any) => {
 	const color = React.useContext(ButtonContext);
-	return <button style={{ color }}>button</button>;
+	return <button type={type} style={{ color }}>button</button>;
 }
 
 export const TaskForm = ({ addTask }: any) => {
@@ -42,7 +42,7 @@ export const TaskForm = ({ addTask }: any) => {
 					value={value}
 					onChange={(e) => setValue(e.target.value)}
 				/>
-				<Button />
+				<Button type="submit" />
 			</form>
 		</ButtonContext.Provider>
 	);

@@ -52,22 +52,38 @@ const Tasks = () => {
 
 
     // useEffect(() => {
-	// 	window.localStorage.setItem("tasks", JSON.stringify(todos));
-    // }, [todos]);
+
+	// 	window.localStorage.setItem("tasks", JSON.stringify(initialTasksState.tasks));
+	// }, [initialTasksState.tasks]);
+	
+	useEffect(() => {
+		console.dir("HI ", state)
+	})
     
 
 	return (
 		<div className="app">
 			<div className="todo-list">
-				{todos && (todos.map((todo: any, index: number) => (
-					<Task
+				{/* {state.tasks && todos.map((todo: any, index: number) => ( }
+					// <Task
+					// 	key={index}
+					// 	index={index}
+					// 	todo={todo}
+					// 	completeTask={completeTask}
+					// 	removeTask={removeTask}
+					// />
+					// console.log("todo: ", state.tasks)
+				// )) */}
+				{/* {console.log(JSON.parse(state.tasks))} */}
+				{JSON.parse(state.tasks).map((todo: any, index: any) => (
+						<Task
 						key={index}
 						index={index}
 						todo={todo}
 						completeTask={completeTask}
 						removeTask={removeTask}
-					/>
-				)))}
+					/>)
+				)}
 				<TaskForm addTask={addTask} />
 				Count: {counterState.count}
 				<button onClick={() => dispatchCounter({ type: DECREMENT })}>

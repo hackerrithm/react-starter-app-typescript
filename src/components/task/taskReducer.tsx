@@ -24,7 +24,17 @@ export function CountReducer(state: any, action: any) {
 export function TaskReducer(state: any, action: any) {
 	switch (action.type) {
 		case ADD:
-			return [ ...state, action.payload ];
+			if (!action.payload) {
+				return state;
+			  }
+			  // return current state if duplicate
+			  if (state.tasks.includes(action.payload)) {
+				return state;
+			  }
+			  return {
+				...state,
+				tasks: [...state.tasks, action.payload]
+			  };
 		case REMOVE:
 			return [ ...state, action.payload ];
 		case COMPLETED:
