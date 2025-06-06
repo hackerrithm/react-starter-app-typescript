@@ -33,7 +33,7 @@
     "webpack": "^4.43.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^5.2.1"
   },
   "scripts": {
     "rs:start": "react-scripts start",
